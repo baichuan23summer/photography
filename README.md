@@ -1,0 +1,110 @@
+# Baichuan Peng — Photography
+
+A quiet, image-first portfolio built with Next.js, React, TypeScript, and Tailwind CSS. It exports to plain static files and deploys automatically to GitHub Pages—there is no server, database, or `gh-pages` branch to maintain.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000). Local development runs at `/`; the `/photography` prefix is applied only to production builds.
+
+## Build
+
+```bash
+npm run build
+```
+
+The complete static website is generated in `out/`.
+
+## Where to edit things
+
+- `data/site.ts`: name, biography, email, Instagram, title, and description
+- `data/projects.ts`: projects, covers, photo order, captions, pairings, and layout rhythm
+- `data/archive.ts`: chronological archive photographs
+- `public/photos/`: all image files
+- `lib/paths.ts`: the single helper for GitHub Pages image paths
+
+The included photographs are temporary local demonstration assets. Replace them before publishing your final collection.
+
+## Add or replace photographs
+
+1. Copy image files into a clear folder such as `public/photos/family/`.
+2. Add each photograph to `data/projects.ts`, or to `data/archive.ts` for archive images.
+3. Enter the image's real pixel `width` and `height`; this preserves its aspect ratio and prevents layout shift.
+4. Add useful `alt` text. `caption`, `location`, and `date` are optional.
+
+Example:
+
+```ts
+{
+  src: "/photos/family/001.jpg",
+  alt: "Family gathering beside the kitchen window",
+  width: 1800,
+  height: 1200,
+  caption: "Santa Barbara, 2026",
+  layout: "wide",
+  spaceBefore: "generous",
+}
+```
+
+Available layouts are `wide`, `normal`, `portrait`, and `small`. Available spacing values are `compact`, `standard`, and `generous`.
+
+To pair photographs, add one item like this inside a project's `photos` array:
+
+```ts
+{
+  type: "pair",
+  align: "center",
+  spaceBefore: "generous",
+  photos: [
+    { src: "/photos/family/002.jpg", alt: "...", width: 1200, height: 1800 },
+    { src: "/photos/family/003.jpg", alt: "...", width: 1600, height: 1067 },
+  ],
+}
+```
+
+Pairs sit side by side on larger screens and stack on phones. Clicking any project or archive photograph opens the lightbox.
+
+## Add a project
+
+1. Create `public/photos/new-project/` and add the images.
+2. Add one object to the `projects` array in `data/projects.ts`.
+3. Give it a unique lowercase `slug`, such as `new-project`.
+4. Set its title, optional year and description, cover photograph, and `photos` sequence.
+
+The next build automatically creates `/work/new-project/`; no page component needs editing.
+
+To reorder projects, move project objects up or down in the `projects` array. This order controls the homepage, Work page, and next-project links.
+
+## Edit the About page
+
+Edit the biography, contact links, and `aboutPhoto` path/dimensions in `data/site.ts`. No page component needs editing.
+
+## Deploy to GitHub Pages
+
+1. Create a GitHub repository named `photography`.
+2. Push this project to its `main` branch.
+3. On GitHub, open the repository.
+4. Click **Settings**.
+5. In the left sidebar, click **Pages** under **Code and automation**.
+6. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+7. Open the repository's **Actions** tab and wait for **Deploy photography portfolio to GitHub Pages** to finish.
+
+The site will be available at:
+
+```txt
+https://<USERNAME>.github.io/photography/
+```
+
+After that one-time setup, normal updates only require:
+
+```bash
+git add .
+git commit -m "update photography"
+git push
+```
+
+Every push to `main` runs the included workflow, rebuilds `out/`, uploads it with the official GitHub Pages actions, and publishes the new version automatically.
