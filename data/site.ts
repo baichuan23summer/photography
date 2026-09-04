@@ -4,7 +4,7 @@ export const site = {
   title: "Baichuan Peng — Photography",
   description:
     "Photographs of people, places, family, and the small moments worth remembering.",
-  bio: "I'm a photographer based between California and China. I photograph people, places, family, and the small moments that I want to remember.",
+  bio: "I am current student at UCSB, and I love photographing people—for the places they belong to, for the city they bring to life, for them, and for myself. Through photography, I hope to preserve honest moments and the stories behind them.",
   email: "bchuanp23summer@gmail.com",
   instagram: "https://www.instagram.com/baichuanphotos/",
   instagramHandle: "@baichuanphotos",
