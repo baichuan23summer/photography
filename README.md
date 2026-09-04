@@ -56,7 +56,7 @@ Example:
 }
 ```
 
-Available layout labels are `wide`, `normal`, `portrait`, and `small`, but they now share one consistent sequence width. Available spacing values are `compact`, `standard`, and `generous`.
+Available layout labels are `wide`, `normal`, `portrait`, and `small`. Landscape photographs use the full sequence width; portrait photographs use two-thirds of it so their long edge matches the landscape scale. Available spacing values are `compact`, `standard`, and `generous`.
 
 To pair photographs, add one item like this inside a project's `photos` array:
 

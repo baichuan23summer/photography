@@ -464,7 +464,7 @@ main {
 }
 
 .layout-portrait {
-  width: min(100%, 78rem);
+  width: min(66.667%, 52rem);
 }
 
 .layout-small {
@@ -791,11 +791,14 @@ main {
   }
 
   .layout-normal,
-  .layout-portrait,
   .layout-small,
   .sequence-pair,
   .sequence-group {
     width: 100%;
+  }
+
+  .layout-portrait {
+    width: 66.667%;
   }
 
   .spacing-compact {
