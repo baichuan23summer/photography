@@ -1,30 +1,27 @@
 import type { Metadata } from "next";
-import { ProjectPreview } from "@/components/ProjectPreview";
+import { PhotoSequence } from "@/components/PhotoSequence";
 import { projects } from "@/data/projects";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Recent",
-  description: `Photographic series by ${site.displayName}.`,
+  description: `${projects[0].title}, photographed by ${site.displayName}.`,
 };
 
-export default function WorkPage() {
+export default function RecentPage() {
+  const project = projects[0];
+
   return (
-    <section className="page-shell" aria-labelledby="work-title">
-      <header className="page-heading">
-        <h1 id="work-title">Recent</h1>
-        <p>{String(projects.length).padStart(2, "0")} series</p>
+    <article className="project-page recent-page">
+      <header className="project-heading">
+        <div>
+          <p className="eyebrow">Recent</p>
+          <h1>{project.title}</h1>
+          {project.year && <p className="project-year">{project.year}</p>}
+        </div>
+        {project.description && <p className="project-description">{project.description}</p>}
       </header>
-      <div className="work-grid">
-        {projects.map((project, index) => (
-          <ProjectPreview
-            key={project.slug}
-            project={project}
-            index={index}
-            priority={index < 2}
-          />
-        ))}
-      </div>
-    </section>
+      <PhotoSequence items={project.photos} />
+    </article>
   );
 }

@@ -4,6 +4,7 @@
 # Next.js
 /.next
 /out
+/photo-originals
 
 # local files
 .DS_Store

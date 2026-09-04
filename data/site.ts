@@ -9,10 +9,10 @@ export const site = {
   instagram: "https://www.instagram.com/your-username/",
   locationLabel: "California ↔ China",
   aboutPhoto: {
-    src: "/photos/sample/curtain-portrait.webp",
-    alt: "A quiet portrait behind a translucent curtain",
-    width: 1122,
-    height: 1402,
+    src: "/photos/about/selfie.webp",
+    alt: "Baichuan Peng standing on a path at night, photographed with flash",
+    width: 3000,
+    height: 1684,
   },
   repositoryName: "photography",
 } as const;

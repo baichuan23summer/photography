@@ -433,7 +433,8 @@ main {
 }
 
 .sequence-single,
-.sequence-pair {
+.sequence-pair,
+.sequence-group {
   margin-right: auto;
   margin-left: auto;
 }
@@ -478,6 +479,7 @@ main {
 
 .sequence-pair .sequence-photo {
   flex: 1 1 0;
+  min-width: 0;
 }
 
 .sequence-pair.align-start {
@@ -490,6 +492,24 @@ main {
 
 .sequence-pair.align-end {
   align-items: flex-end;
+}
+
+.sequence-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(0.75rem, 1.8vw, 2rem);
+  width: 100%;
+}
+
+.recent-page .project-heading {
+  min-height: 0;
+  padding: 1rem 0 clamp(3rem, 6vw, 6rem);
+}
+
+.recent-page .project-description {
+  font-size: 0.875rem;
+  color: var(--muted);
 }
 
 .photo-button {
@@ -810,6 +830,11 @@ main {
   .sequence-pair .sequence-photo:nth-child(2) {
     width: 82%;
     justify-self: end;
+  }
+
+  .sequence-group {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .next-project {

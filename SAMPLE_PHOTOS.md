@@ -1,6 +1,6 @@
-# Sample photograph sources
+# Historical sample photograph sources
 
-The active `.webp` files in `public/photos/sample/` were generated as neutral demonstration content for this starter portfolio. They are not presented as documentary records or as Baichuan Peng's finished work.
+The starter photographs have been replaced with Baichuan Peng's photographs and are no longer part of the published photo folders. Local copies of the old sample files are preserved in `photo-originals/legacy-samples/`, and their original versions remain in Git history. The paths below record the starter's former file locations.
 
 ## Generated assets
 
@@ -19,7 +19,7 @@ Condensed prompt set (all use a natural, photorealistic editorial style; no text
 
 ## Retained optional assets
 
-The older `.jpg` files in the project-specific folders are local demonstration assets downloaded from Unsplash and are retained only as optional replacement material. The website does not fetch any image from a third-party service at runtime.
+The older `.jpg` files were local demonstration assets downloaded from Unsplash. They are archived with the other legacy samples and are not used by the current photo galleries. The website does not fetch any image from a third-party service at runtime.
 
 Each Unsplash source can be found using its photo identifier:
 

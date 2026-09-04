@@ -2,17 +2,17 @@
 
 import Image from "next/image";
 import { useCallback, useMemo, useState } from "react";
-import type { Photo, PhotoPair, SequenceItem } from "@/data/projects";
+import type { Photo, PhotoGroup, PhotoPair, SequenceItem } from "@/data/projects";
 import { assetPath } from "@/lib/paths";
 import { Lightbox } from "./Lightbox";
 
-function isPair(item: SequenceItem): item is PhotoPair {
-  return "type" in item && item.type === "pair";
+function isSet(item: SequenceItem): item is PhotoPair | PhotoGroup {
+  return "type" in item;
 }
 
 export function PhotoSequence({ items }: { items: SequenceItem[] }) {
   const photos = useMemo(
-    () => items.flatMap((item) => (isPair(item) ? item.photos : [item])),
+    () => items.flatMap((item) => (isSet(item) ? item.photos : [item])),
     [items],
   );
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -50,11 +50,13 @@ export function PhotoSequence({ items }: { items: SequenceItem[] }) {
     <>
       <div className="photo-sequence">
         {items.map((item, itemIndex) => {
-          if (isPair(item)) {
+          if (isSet(item)) {
             return (
               <div
-                className={`sequence-pair align-${item.align ?? "center"} spacing-${item.spaceBefore ?? "standard"}`}
-                key={`pair-${itemIndex}`}
+                className={`${item.type === "group" ? "sequence-group" : `sequence-pair align-${item.align ?? "center"}`} spacing-${item.spaceBefore ?? "standard"}`}
+                key={`${item.type}-${itemIndex}`}
+                role={item.type === "group" ? "group" : undefined}
+                aria-label={item.type === "group" ? item.label : undefined}
               >
                 {item.photos.map((photo) => renderPhoto(photo))}
               </div>

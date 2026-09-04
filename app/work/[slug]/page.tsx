@@ -78,12 +78,14 @@ export default async function ProjectPage({
 
       <PhotoSequence items={project.photos} />
 
-      <nav className="next-project" aria-label="Next project">
-        <span>Next series</span>
-        <Link href={`/work/${nextProject.slug}/`}>
-          {nextProject.title} <span aria-hidden="true">→</span>
-        </Link>
-      </nav>
+      {projects.length > 1 && (
+        <nav className="next-project" aria-label="Next project">
+          <span>Next series</span>
+          <Link href={`/work/${nextProject.slug}/`}>
+            {nextProject.title} <span aria-hidden="true">→</span>
+          </Link>
+        </nav>
+      )}
     </article>
   );
 }
