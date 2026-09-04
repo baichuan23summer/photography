@@ -6,7 +6,7 @@ import { useState } from "react";
 import { site } from "@/data/site";
 
 const navigation = [
-  { href: "/work/", label: "Work" },
+  { href: "/work/", label: "Recent" },
   { href: "/archive/", label: "Archive" },
   { href: "/about/", label: "About" },
 ];

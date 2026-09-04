@@ -77,7 +77,7 @@ Pairs sit side by side on larger screens and stack on phones. Clicking any proje
 
 The next build automatically creates `/work/new-project/`; no page component needs editing.
 
-To reorder projects, move project objects up or down in the `projects` array. This order controls the homepage, Work page, and next-project links.
+To reorder projects, move project objects up or down in the `projects` array. This order controls the homepage, Recent page, and next-project links.
 
 ## Edit the About page
 

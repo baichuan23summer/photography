@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Recent",
   description: `Photographic series by ${site.displayName}.`,
 };
 
@@ -12,7 +12,7 @@ export default function WorkPage() {
   return (
     <section className="page-shell" aria-labelledby="work-title">
       <header className="page-heading">
-        <h1 id="work-title">Work</h1>
+        <h1 id="work-title">Recent</h1>
         <p>{String(projects.length).padStart(2, "0")} series</p>
       </header>
       <div className="work-grid">
