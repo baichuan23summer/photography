@@ -29,9 +29,9 @@ export default function AboutPage() {
         <div className="about-copy">
           <p>{site.bio}</p>
           <div className="about-links" aria-label="Contact links">
-            <a href={`mailto:${site.email}`}>Email</a>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
             <a href={site.instagram} target="_blank" rel="noreferrer">
-              Instagram
+              {site.instagramHandle}
             </a>
           </div>
         </div>
