@@ -56,7 +56,7 @@ Example:
 }
 ```
 
-Available layouts are `wide`, `normal`, `portrait`, and `small`. Available spacing values are `compact`, `standard`, and `generous`.
+Available layout labels are `wide`, `normal`, `portrait`, and `small`, but they now share one consistent sequence width. Available spacing values are `compact`, `standard`, and `generous`.
 
 To pair photographs, add one item like this inside a project's `photos` array:
 
@@ -72,9 +72,9 @@ To pair photographs, add one item like this inside a project's `photos` array:
 }
 ```
 
-Pairs sit side by side on larger screens and stack on phones. Clicking any project or archive photograph opens the lightbox.
+Pairs stack at the same full sequence width on every screen. Clicking any project or archive photograph opens the lightbox.
 
-To show three photographs as one set, use `type: "group"`, a descriptive `label`, and three entries in `photos`. The Fiesta dancing group uses this format in `data/projects.ts`: 0948, 0921, and 0850, immediately after the standalone opening photograph 0960. Groups form a three-column row on larger screens and a closely spaced stack on phones.
+To show three photographs as one set, use `type: "group"`, a descriptive `label`, and three entries in `photos`. The Fiesta dancing group uses this format in `data/projects.ts`: 0948, 0921, and 0850, immediately after the standalone opening photograph 0960. Groups remain a closely spaced, consistently sized stack at every screen width.
 
 ## Add a project
 

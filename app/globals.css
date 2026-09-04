@@ -456,50 +456,37 @@ main {
 }
 
 .layout-wide {
-  width: 100%;
+  width: min(100%, 78rem);
 }
 
 .layout-normal {
-  width: min(78%, 70rem);
+  width: min(100%, 78rem);
 }
 
 .layout-portrait {
-  width: min(44%, 39rem);
+  width: min(100%, 78rem);
 }
 
 .layout-small {
-  width: min(36%, 31rem);
+  width: min(100%, 78rem);
 }
 
 .sequence-pair {
-  display: flex;
-  gap: clamp(1rem, 3.5vw, 4.5rem);
-  width: min(88%, 78rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  width: min(100%, 78rem);
 }
 
 .sequence-pair .sequence-photo {
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-.sequence-pair.align-start {
-  align-items: flex-start;
-}
-
-.sequence-pair.align-center {
-  align-items: center;
-}
-
-.sequence-pair.align-end {
-  align-items: flex-end;
+  width: 100%;
 }
 
 .sequence-group {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
-  gap: clamp(0.75rem, 1.8vw, 2rem);
-  width: 100%;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  width: min(100%, 78rem);
 }
 
 .recent-page .project-heading {
@@ -806,7 +793,8 @@ main {
   .layout-normal,
   .layout-portrait,
   .layout-small,
-  .sequence-pair {
+  .sequence-pair,
+  .sequence-group {
     width: 100%;
   }
 
@@ -822,18 +810,8 @@ main {
     margin-top: 7.5rem;
   }
 
-  .sequence-pair {
-    display: grid;
-    gap: 3rem;
-  }
-
-  .sequence-pair .sequence-photo:nth-child(2) {
-    width: 82%;
-    justify-self: end;
-  }
-
+  .sequence-pair,
   .sequence-group {
-    grid-template-columns: 1fr;
     gap: 1.25rem;
   }
 
