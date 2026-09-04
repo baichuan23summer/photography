@@ -83,7 +83,7 @@ To show three photographs as one set, use `type: "group"`, a descriptive `label`
 3. Give it a unique lowercase `slug`, such as `new-project`.
 4. Set its title, optional year and description, cover photograph, and `photos` sequence.
 
-The next build automatically creates `/work/new-project/`; no page component needs editing.
+The next build automatically creates `/recent/new-project/`; no page component needs editing.
 
 To reorder projects, move project objects up or down in the `projects` array. This order controls the homepage and next-project links; Recent displays the first project in full.
 

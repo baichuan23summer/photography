@@ -14,7 +14,7 @@ export function ProjectPreview({
 }) {
   return (
     <article className={`project-preview project-preview-${(index % 3) + 1}`}>
-      <Link href={`/work/${project.slug}/`}>
+      <Link href={`/recent/${project.slug}/`}>
         <figure>
           <Image
             src={assetPath(project.cover.src)}

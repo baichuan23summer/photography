@@ -334,7 +334,7 @@ main {
   color: var(--muted);
 }
 
-.work-grid {
+.recent-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   align-items: start;
@@ -762,7 +762,7 @@ main {
     padding-bottom: 3.5rem;
   }
 
-  .work-grid {
+  .recent-grid {
     display: block;
   }
 

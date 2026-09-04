@@ -81,7 +81,7 @@ export default async function ProjectPage({
       {projects.length > 1 && (
         <nav className="next-project" aria-label="Next project">
           <span>Next series</span>
-          <Link href={`/work/${nextProject.slug}/`}>
+          <Link href={`/recent/${nextProject.slug}/`}>
             {nextProject.title} <span aria-hidden="true">→</span>
           </Link>
         </nav>

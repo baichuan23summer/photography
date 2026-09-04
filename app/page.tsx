@@ -7,11 +7,11 @@ const coverClasses = ["home-wide", "home-portrait", "home-square", "home-landsca
 
 export default function HomePage() {
   return (
-    <section className="home-gallery" aria-label="Selected photographic work">
+    <section className="home-gallery" aria-label="Selected recent photography">
       {projects.map((project, index) => (
         <Link
           key={project.slug}
-          href={`/work/${project.slug}/`}
+          href={`/recent/${project.slug}/`}
           className={`home-project ${coverClasses[index % coverClasses.length]}`}
         >
           <figure>

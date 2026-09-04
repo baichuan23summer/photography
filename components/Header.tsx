@@ -6,7 +6,7 @@ import { useState } from "react";
 import { site } from "@/data/site";
 
 const navigation = [
-  { href: "/work/", label: "Recent" },
+  { href: "/recent/", label: "Recent" },
   { href: "/archive/", label: "Archive" },
   { href: "/about/", label: "About" },
 ];
@@ -16,8 +16,8 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const isActive = (href: string) =>
-    href === "/work/"
-      ? pathname.includes("/work")
+    href === "/recent/"
+      ? pathname.includes("/recent")
       : pathname.endsWith(href.slice(0, -1));
 
   return (
